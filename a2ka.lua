@@ -1,8 +1,6 @@
 if GetObjectName(GetMyHero()) ~= "Akali" then return end
 	
 require('Inspired')
-require('DeftLib')
-require('IPrediction')
 
 local AkaliMenu = MenuConfig("Akali", "Akali")
 ThhMenu:Menu("Combo", "Combo")
