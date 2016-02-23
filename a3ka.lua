@@ -2,17 +2,22 @@ if GetObjectName(GetMyHero()) ~= "Akali" then return end
 	
 require('Inspired')
 
+
 local AkaliMenu = MenuConfig("Akali", "Akali")
-ThhMenu:Menu("Combo", "Combo")
+AkaliMenu:Menu("Combo", "Combo")
 AkaliMenu.Combo:Boolean("Q", "Use Q", true)
-AkaliMenu.Combo:Boolean("E", "Use E", true)
-AkaliMenu.Combo:KeyBinding("Harass", "Use Q Only !", string.byte("C"))
+AkaliMenu.Combo:Boolean("W", "Use W", true)
 AkaliMenu.Combo:Boolean("R", "Use R", true)
 
+AkaliMenu:Menu("Harass", "Harass")
+AkaliMenu.Harass:Boolean("Q", "Use Q", true)
+AkaliMenu.Harass:Boolean("W", "Use W", true)
+AkaliMenu.Harass:Slider("Mana", "if Mana % >", 30, 0, 80, 1)
 
-AkaliMenu:Menu("Misc", "Misc")
-AkaliMenu.Misc:Boolean("Autoignite", "Auto Ignite", true)
-AkaliMenu.Misc:Boolean("AntiDash", "Anti-Dash (Advanced Gap-Closer)", true)
+AkaliMenu:Menu("Killsteal", "Killsteal")
+AkaliMenu.Killsteal:Boolean("Q", "Killsteal with Q", true)
+AkaliMenu.Killsteal:Boolean("W", "Killsteal with W", true)
+AkaliMenu.Killsteal:Boolean("R", "Killsteal with R", true)
 
 
 
