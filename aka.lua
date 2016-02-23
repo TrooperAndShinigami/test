@@ -1,4 +1,4 @@
-if GetObjectName(GetMyHero()) ~= "Thresh" then return end
+if GetObjectName(GetMyHero()) ~= "Akali" then return end
 	
 require('Inspired')
 require('DeftLib')
