@@ -1,27 +1,27 @@
 require('Inspired')
-if GetObjectName(myHero) ~= "Kog'Maw" then return end
+if GetObjectName(myHero) ~= "KogMaw" then return end
 
-Kog'Maw = MenuConfig("Kog'Maw", "Kog'Maw")
+Kog'Maw = MenuConfig("KogMaw", "KogMaw")
 Kog'Maw:KeyBinding("Combo", "Combo", 32)
 
-Kog'Maw:Menu("Spells", "Spells")
-Kog'Maw.Spells:Info("InfoSpells", "En-/Disable Spells to use in Combo")
-Kog'Maw.Spells:Boolean("C", "Q", true)
-Kog'Maw.Spells:Boolean("W", "W", true)
-Kog'Maw.Spells:Boolean("E", "E", true)
-Kog'Maw.Spells:Boolean("R", "R", true)
+KogMaw:Menu("Spells", "Spells")
+KogMaw.Spells:Info("InfoSpells", "En-/Disable Spells to use in Combo")
+KogMaw.Spells:Boolean("C", "Q", true)
+KogMaw.Spells:Boolean("W", "W", true)
+KogMaw.Spells:Boolean("E", "E", true)
+KogMaw.Spells:Boolean("R", "R", true)
 
-Kog'Maw:Menu("KS", "Ks")
-Kog'Maw.KS:Info("InfoKS", "AutoIgnite")
-Kog'Maw.KS:Boolean("I", "Ignite", true)
-Kog'Maw.KS:Boolean("KS", "Killsteal", true)
+KogMaw:Menu("KS", "Ks")
+KogMaw.KS:Info("InfoKS", "AutoIgnite")
+KogMaw.KS:Boolean("I", "Ignite", true)
+KogMaw.KS:Boolean("KS", "Killsteal", true)
 
-Kog'Maw:Menu("Draw", "Drawings")
-Kog'Maw.Draw:Boolean("Draw", "Draw", true)
-Kog'Maw.Draw:Boolean("Q", "Draw Q", true)
-Kog'Maw.Draw:Boolean("W", "Draw W", true)
-Kog'Maw.Draw:Boolean("E", "Draw E", true)
-Kog'Maw.Draw:Boolean("R", "Draw E", false)
+KogMaw:Menu("Draw", "Drawings")
+KogMaw.Draw:Boolean("Draw", "Draw", true)
+KogMaw.Draw:Boolean("Q", "Draw Q", true)
+KogMaw.Draw:Boolean("W", "Draw W", true)
+KogMaw.Draw:Boolean("E", "Draw E", true)
+KogMaw.Draw:Boolean("R", "Draw E", false)
 
 ------------------------------------------
 --Variables
@@ -53,13 +53,13 @@ OnTick(function(myHero)
 
              			   
                         if CanUseSpell(myHero, _Q) == READY and QPred.HitChance == 1
-						and ValidTarget(target, 1300) and LuluMenu.Combo.Q:Value() then
+						and ValidTarget(target, 1300) and KogMaw.Spells.Q:Value() then
                         CastSkillShot(_Q,QPred.PredPos.x,QPred.PredPos.y,QPred.PredPos.z)
 	       				end
-                        if CanUseSpell(myHero, _W) == READY and ValidTarget(target, 700) and Kog'Maw.Spells.W:Value() then
+                        if CanUseSpell(myHero, _W) == READY and ValidTarget(target, 700) and KogMaw.Spells.W:Value() then
                         CastTargetSpell(target, _W)
                         end
-			if CanUseSpell(myHero, _R) == READY and ValidTarget(target, 1000) and Kog'Maw.Spells.R:Value() then
+			if CanUseSpell(myHero, _R) == READY and ValidTarget(target, 1000) and KogMaw.Spells.R:Value() then
                         CastTargetSpell(target, _R)
                         end
                     end
